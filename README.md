@@ -1,3 +1,5 @@
+forked to copy fields based on json tags
+
 # Copier
 
   I am a copier, I copy everything from one to another
