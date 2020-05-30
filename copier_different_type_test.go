@@ -1,9 +1,7 @@
-package copier_test
+package copier
 
 import (
 	"testing"
-
-	"github.com/jinzhu/copier"
 )
 
 type TypeStruct1 struct {
@@ -49,7 +47,7 @@ func TestCopyDifferentFieldType(t *testing.T) {
 	}
 	ts2 := &TypeStruct2{}
 
-	copier.Copy(ts2, ts)
+	Copy(ts2, ts)
 
 	if ts2.Field2 != ts.Field2 || ts2.Field1 != 0 {
 		t.Errorf("Should be able to copy from ts to ts2")
@@ -63,7 +61,7 @@ func TestCopyDifferentTypeMethod(t *testing.T) {
 	}
 	ts4 := &TypeStruct4{}
 
-	copier.Copy(ts4, ts)
+	Copy(ts4, ts)
 
 	if ts4.Field2 != ts.Field2 || ts4.field1 != 0 {
 		t.Errorf("Should be able to copy from ts to ts4")
@@ -104,7 +102,7 @@ func TestAssignableType(t *testing.T) {
 
 	ts3 := &TypeStruct3{}
 
-	copier.Copy(&ts3, &ts)
+	Copy(&ts3, &ts)
 
 	if v, ok := ts3.Field1.(string); !ok {
 		t.Error("Assign to interface{} type did not succeed")
