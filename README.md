@@ -8,11 +8,7 @@ forked to copy fields based on json tags
 
 ## Features
 
-* Copy from field to field with same name
-* Copy from method to field with same name
-* Copy from field to method with same name
-* Copy from slice to slice
-* Copy from struct to slice
+* Copies a struct into another struct based on the JSON tags of the fields inside the struct
 
 ## Usage
 
